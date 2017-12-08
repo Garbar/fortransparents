@@ -42,3 +42,4 @@ gem 'administrate', github: 'thoughtbot/administrate'
 gem "administrate-field-ckeditor", "~> 0.0.7"
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
+gem 'high_voltage', '~> 3.0.0'
