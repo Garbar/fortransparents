@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class ArticleDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,14 +9,13 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
-    password: PasswordField,
-    password_confirmation: PasswordField,
+    title: Field::String,
+    body: Field::Ckeditor,
+    description: Field::Text,
+    published_at: Field::DateTime,
+    slug: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    name: Field::String,
-    role: Field::String.with_options(searchable: false),
-    avatar: Field::Carrierwave
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,38 +25,39 @@ class UserDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :name,
-    :email
+    :title,
+    :body,
+    :description,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :name,
-    :role,
-    :email,
+    :title,
+    :body,
+    :description,
+    :published_at,
+    :slug,
     :created_at,
     :updated_at,
-    :avatar
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email,
-    :name,
-    :password,
-    :password_confirmation,
-    :avatar,
-    :role
+    :title,
+    :body,
+    :description,
+    :published_at,
+    :slug,
   ].freeze
 
-  # Overwrite this method to customize how users are displayed
+  # Overwrite this method to customize how articles are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
+  # def display_resource(article)
+  #   "Article ##{article.id}"
   # end
 end
