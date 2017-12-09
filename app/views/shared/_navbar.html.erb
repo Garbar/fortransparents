@@ -31,9 +31,14 @@
           <li class="nav-item">
             <%= link_to "Blog", articles_path, class: "nav-link" %>
           </li>
-          <li class="nav-item"><a href="post.html" class="nav-link ">Post</a>
-          </li>
           <li class="nav-item"><%= link_to "About Us", page_path('about'), class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i>
+           </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= render partial: "shared/nav_links_for_auth" %> 
+            </div>
           </li>
         </ul>
         <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
