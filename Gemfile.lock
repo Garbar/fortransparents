@@ -1,6 +1,15 @@
 GIT
+  remote: https://github.com/rails/webpacker.git
+  revision: a61f8fe3964e4ed06829118d1f706f12a95008ab
+  specs:
+    webpacker (3.0.2)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
+
+GIT
   remote: https://github.com/thoughtbot/administrate.git
-  revision: 8329b214cea4eada8febbf1552dcbe7e3b9a9153
+  revision: 6661889711edd688c8768e48602fa4a25b82d7bf
   specs:
     administrate (0.8.1)
       actionpack (>= 4.2, < 5.2)
@@ -63,7 +72,7 @@ GEM
       rails (>= 4.2, < 5.2)
     arel (8.0.0)
     ast (2.3.0)
-    autoprefixer-rails (7.1.6)
+    autoprefixer-rails (7.2.2)
       execjs
     bcrypt (3.1.11)
     better_errors (2.4.0)
@@ -150,10 +159,10 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
-    meta_request (0.4.3)
+    meta_request (0.5.0)
       callsite (~> 0.0, >= 0.0.11)
       rack-contrib (>= 1.1, < 3)
-      railties (>= 3.0.0, < 5.2.0)
+      railties (>= 3.0.0, < 6)
     method_source (0.9.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -174,13 +183,13 @@ GEM
       ast (~> 2.3)
     pg (0.21.0)
     powerpack (0.1.1)
-    puma (3.10.0)
+    puma (3.11.0)
     rack (2.0.3)
-    rack-contrib (1.2.0)
-      rack (>= 0.9.1)
-    rack-proxy (0.6.2)
+    rack-contrib (2.0.1)
+      rack (~> 2.0)
+    rack-proxy (0.6.3)
       rack
-    rack-test (0.7.0)
+    rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.1.4)
       actioncable (= 5.1.4)
@@ -225,7 +234,7 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
-    rspec-rails (3.7.1)
+    rspec-rails (3.7.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
@@ -277,7 +286,7 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (3.2.0)
+    uglifier (4.0.1)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.3.0)
     warden (1.2.7)
@@ -287,10 +296,6 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
-    webpacker (3.0.2)
-      activesupport (>= 4.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 4.2)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -330,7 +335,7 @@ DEPENDENCIES
   turbolinks (~> 5)
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
-  webpacker
+  webpacker!
 
 RUBY VERSION
    ruby 2.4.2p198
