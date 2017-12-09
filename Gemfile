@@ -46,3 +46,4 @@ gem 'administrate-field-carrierwave', '~> 0.2.0'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'high_voltage', '~> 3.0.0'
+gem 'webpacker', require: false
