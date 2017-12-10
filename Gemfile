@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.2'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -34,6 +35,7 @@ group :development do
   gem 'meta_request'
 end
 
+
 gem 'figaro'
 gem 'friendly_id'
 gem 'mini_magick'
@@ -44,3 +46,4 @@ gem 'administrate-field-carrierwave', '~> 0.2.0'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'high_voltage', '~> 3.0.0'
+gem 'webpacker', github: 'rails/webpacker'
