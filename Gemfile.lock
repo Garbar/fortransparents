@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: 32bc0c6702388549cb4b3f00f82afbc3798d6891
+  specs:
+    ckeditor (4.2.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/rails/webpacker.git
   revision: a61f8fe3964e4ed06829118d1f706f12a95008ab
   specs:
@@ -87,9 +95,6 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    ckeditor (4.2.4)
-      cocaine
-      orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -312,6 +317,7 @@ DEPENDENCIES
   better_errors
   byebug
   carrierwave (~> 1.0)
+  ckeditor!
   coffee-rails (~> 4.2)
   database_cleaner
   devise
