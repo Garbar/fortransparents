@@ -5,4 +5,8 @@ class Article < ApplicationRecord
 
   validates :title, presence: true,
                     length: { minimum: 5 }
+
+  def should_generate_new_friendly_id?
+    new_record? || slug.blank?
+  end
 end
