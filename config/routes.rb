@@ -3,11 +3,16 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :articles
+    resources :stories
+    resources :videos
 
     root to: "users#index"
   end
 
   resources :articles, only: [:index, :show]
+  resources :stories, only: [:index, :show]
+  resources :videos, only: [:index, :show]
+  get "contact" => "contact#index"
   get 'pages/about' => 'high_voltage/pages#show', id: 'about'
 
   devise_for :users
