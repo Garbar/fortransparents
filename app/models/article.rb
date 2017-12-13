@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  mount_uploader :image, ImageUploader
   attribute :published_at, :datetime, default: -> { Time.now }
   extend FriendlyId
   friendly_id :title, use: :slugged

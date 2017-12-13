@@ -44,8 +44,10 @@ gem 'administrate', github: 'thoughtbot/administrate'
 gem "administrate-field-ckeditor", "~> 0.0.7"
 gem 'administrate-field-carrierwave', '~> 0.2.0'
 gem 'ckeditor', github: 'galetahub/ckeditor'
-gem "pundit"
+gem 'pundit'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
 gem 'high_voltage', '~> 3.0.0'
 gem 'webpacker', github: 'rails/webpacker'
+gem 'kaminari'
+gem 'rails-timeago', '~> 2.0'

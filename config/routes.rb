@@ -8,10 +8,13 @@ Rails.application.routes.draw do
 
     root to: "users#index"
   end
+  concern :paginatable do
+    get '(page/:page)', action: :index, on: :collection, as: ''
+  end
 
-  resources :articles, only: [:index, :show]
-  resources :stories, only: [:index, :show]
-  resources :videos, only: [:index, :show]
+  resources :articles, only: [:index, :show], concerns: :paginatable
+  resources :stories, only: [:index, :show], concerns: :paginatable
+  resources :videos, only: [:index, :show], concerns: :paginatable
   get "contact" => "contact#index"
   get 'pages/about' => 'high_voltage/pages#show', id: 'about'
 

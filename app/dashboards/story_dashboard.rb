@@ -10,12 +10,13 @@ class StoryDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    body: Field::Text,
+    body: Field::Ckeditor,
     description: Field::Text,
     published_at: Field::DateTime,
     slug: Field::String,
+    image: Field::Carrierwave,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,8 +27,9 @@ class StoryDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :body,
-    :description,
+    :published_at,
+    :slug,
+    :description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,8 +41,9 @@ class StoryDashboard < Administrate::BaseDashboard
     :description,
     :published_at,
     :slug,
+    :image,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -52,6 +55,7 @@ class StoryDashboard < Administrate::BaseDashboard
     :description,
     :published_at,
     :slug,
+    :image
   ].freeze
 
   # Overwrite this method to customize how stories are displayed

@@ -17,5 +17,51 @@
       </div>
     </div>
   </div>
-  <!-- #####End page head
-  --> 
+</section>
+  <!-- #####End page head --> 
+<div class="container">
+  <div class="row">
+    <!-- Latest Posts -->
+    <main class="posts-listing col-lg-8"> 
+      <div class="container">
+        <div class="row">
+          <!-- post -->
+           <% @stories.each do |story| %>
+          <div class="post col-xl-6">
+            <div class="post-thumbnail">
+              <%= link_to(story) do %>
+                <%= image_tag(story.image_url, class: "img-fluid") if story.image? %>
+              <% end %>
+            </div>
+            <div class="post-details">            
+              <div class="post-meta d-flex justify-content-between">
+                <div class="date meta-last">20 May | 2016</div>
+              </div>
+              <%= link_to(story) do %>
+                <h3 class="h4"><%= story.title %></h3>
+              <% end %>
+              <p class="text-muted"><%= story.description %></p>
+              <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
+                <div class="title"><span>John Doe</span></div></a>
+                <div class="date"><i class="icon-clock"></i><%= timeago_tag story.published_at, :nojs => true, :limit => 10.days.ago %></div>             
+              </footer>
+            </div>
+          </div>
+            <% end %>
+        </div>
+        </div>
+                  <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-template d-flex justify-content-center">
+          <%= paginate @stories %>
+            <%# <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+            <li class="page-item"><a href="#" class="page-link active">1</a></li>
+            <li class="page-item"><a href="#" class="page-link">2</a></li>
+            <li class="page-item"><a href="#" class="page-link">3</a></li>
+            <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-right"></i></a></li> %>
+          </ul>
+        </nav>
+      </div>
+    </main>
+  </div>
+</div>
