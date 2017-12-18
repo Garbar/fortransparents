@@ -1,4 +1,6 @@
 class StoriesController < ApplicationController
+  include Sidebar
+
   def index
     @stories = Story.order(published_at: :desc).page params[:page]
   end

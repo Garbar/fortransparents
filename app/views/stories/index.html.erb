@@ -1,24 +1,5 @@
-<!-- #####Begin contents-->
-<section id="contents">
-  <!-- #####Begin page head-->
-  <div class="page-head lined" data-img-src="../assets/img/backgrounds/bg-dark-01.jpg">
-    <div class="container">
-      <div class="tb-vcenter-wrapper">
-        <div class="title-wrapper vcenter">
-          <h1 class="title">News &amp; Blog</h1>
-        </div>
-        <div class="breadcrumb-wrapper vcenter">
-          <ul class="breadcrumb">
-            <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <li>learning environment</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-  <!-- #####End page head --> 
+<% breadcrumb :stories %>
+<% provide(:title, 'Live Stories') %>
 <div class="container">
   <div class="row">
     <!-- Latest Posts -->
@@ -30,12 +11,12 @@
           <div class="post col-xl-6">
             <div class="post-thumbnail">
               <%= link_to(story) do %>
-                <%= image_tag(story.image_url, class: "img-fluid") if story.image? %>
+                <%= image_tag(story.image_url(:blog), class: "img-fluid") if story.image? %>
               <% end %>
             </div>
             <div class="post-details">            
               <div class="post-meta d-flex justify-content-between">
-                <div class="date meta-last">20 May | 2016</div>
+                <div class="date meta-last"><%= story.published_at.strftime('%d %B | %Y') %></div>
               </div>
               <%= link_to(story) do %>
                 <h3 class="h4"><%= story.title %></h3>
@@ -49,19 +30,10 @@
           </div>
             <% end %>
         </div>
-        </div>
-                  <!-- Pagination -->
-        <nav aria-label="Page navigation example">
-          <ul class="pagination pagination-template d-flex justify-content-center">
-          <%= paginate @stories %>
-            <%# <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
-            <li class="page-item"><a href="#" class="page-link active">1</a></li>
-            <li class="page-item"><a href="#" class="page-link">2</a></li>
-            <li class="page-item"><a href="#" class="page-link">3</a></li>
-            <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-right"></i></a></li> %>
-          </ul>
-        </nav>
+        <!-- Pagination -->
+        <%= paginate @stories %>
       </div>
     </main>
+    <%= render partial: "shared/sidebar" %>
   </div>
 </div>

@@ -1,2 +1,60 @@
-<h1>Contact#index</h1>
-<p>Find me in app/views/contact/index.html.erb</p>
+<% breadcrumb :contact %>
+<% provide(:title, "Contact") %>
+<section class="contact_page_2 pb-100 pt-100 pb-xs-80 pt-xs-80">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-5 col-sm-6 col-xs-12">
+                  <div class="contact__info pb-xxs-30">
+                      <div class="contact_address inline-block pb-xxs-20">
+                          <h6>818 South Broadway Ste 1100 Los Angeles, CA 90014</h6>
+                      </div>
+                      <div class="contact__phone inline-block float-left-xxs">
+                          <i class="fa fa-phone"></i><a href="tel:">016 2589 2353</a>
+                          <br>
+                          <i class="fa fa-envelope"></i><a href="mailto:">contact@p1.com</a>
+                      </div>
+                      <p>Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days.
+                          <br>
+                          <br> We are open from 9am — 5pm week days.
+                      </p>
+                  </div>
+              </div>
+
+              <div class="col-md-6 offset-md-1 col-sm-6 col-xs-12">
+                  <div class="contact_form_page">
+                      <form id="contactform" action="sendmail.php" method="post" class="wpcf7-form">
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                              <label>Your Name*</label>
+                              <span class="wpcf7-form-control-wrap name">
+                                <input id="name" name="name" value="" size="50" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required validate" aria-invalid="false" type="text" required="">
+                                </span>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                              <label>Email*</label>
+                              <span class="wpcf7-form-control-wrap email"><input id="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-invalid="false" type="email" required=""></span>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                              <label>Website</label>
+                              <span class="wpcf7-form-control-wrap email"><input id="website" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-invalid="false" type="url" required=""></span>
+                          </div>
+
+                          <div class="col-md-6 col-sm-12 col-xs-12">
+                              <label>Subject*</label>
+                              <span class="wpcf7-form-control-wrap email"><input id="sub" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-invalid="false" type="text" required=""></span>
+                          </div>
+
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                              <label>Your Message</label>
+                              <div class="wpcf7-form-control-wrap message"><textarea id="message" name="message" cols="40" rows="5" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-invalid="false" required=""></textarea></div>
+                              <button class="btn btn__sm transition box-s-none" type="submit" value="Submit">Submit</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- ============ Conatct Page =========== -->
+

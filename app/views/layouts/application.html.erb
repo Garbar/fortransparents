@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Relatives</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,8 +10,9 @@
 
   <body>
     <%= render partial: "shared/navbar" %>
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+    <%= render 'layouts/messages' %>
+    <%= render partial: "shared/breadcrumb" %>
+    <%= yield %>
     <%= render partial: "shared/footer" %>
   </body>
 </html>

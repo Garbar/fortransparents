@@ -10,4 +10,12 @@ class Article < ApplicationRecord
   def should_generate_new_friendly_id?
     new_record? || slug.blank?
   end
+
+  def prev
+    Article.where("published_at > ?", published_at).order(published_at: :asc).limit(1).first
+  end
+
+  def next
+    Article.where("published_at < ?", published_at).order(published_at: :desc).limit(1).first
+  end
 end

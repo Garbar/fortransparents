@@ -8,10 +8,11 @@
 #   Article.new.tap do |q|
 #     q.title = FFaker::Book.title
 #     q.body = sample_text
+#     q.image = File.open(File.join(Rails.root, "app/assets/images/fallback/default.jpg"))
 #     q.description = FFaker::HipsterIpsum.phrase
 #     q.save!
 #   end
 # end
 
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+# user = CreateAdminService.new.call
+# puts 'CREATED ADMIN USER: ' << user.email

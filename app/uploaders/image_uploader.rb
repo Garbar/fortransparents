@@ -19,11 +19,11 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :blog do
-    process resize_to_fit: [350,250]
+    process resize_to_fill: [350,250]
   end
 
   version :preview do
-    process resize_to_fill: [50,50]
+    process resize_to_fill: [60,60]
   end
 
   def store_dir
