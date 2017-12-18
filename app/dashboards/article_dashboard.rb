@@ -14,6 +14,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     description: Field::Text,
     published_at: Field::DateTime,
     slug: Field::String,
+    image: Field::Carrierwave,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
   }.freeze
@@ -26,8 +27,9 @@ class ArticleDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :body,
-    :description,
+    :published_at,
+    :slug,
+    :description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -39,8 +41,9 @@ class ArticleDashboard < Administrate::BaseDashboard
     :description,
     :published_at,
     :slug,
+    :image,
     :created_at,
-    :updated_at,
+    :updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -52,6 +55,7 @@ class ArticleDashboard < Administrate::BaseDashboard
     :description,
     :published_at,
     :slug,
+    :image
   ].freeze
 
   # Overwrite this method to customize how articles are displayed
