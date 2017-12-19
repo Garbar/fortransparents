@@ -23,6 +23,6 @@ class Video < ApplicationRecord
   end
 
   def code
-    self.body.split('/').last if self.body
+    self.body.split('=').last if self.body
   end
 end
