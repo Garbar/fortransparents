@@ -1,0 +1,53 @@
+<% breadcrumb :contact %>
+<% provide(:title, "Contact") %>
+<section class="contact_page_2 pb-100 pt-100 pb-xs-80 pt-xs-80">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-5 col-sm-6 col-xs-12">
+                  <div class="contact__info pb-xxs-30">
+                      <div class="contact_address inline-block pb-xxs-20">
+                          <h6>818 South Broadway Ste 1100 Los Angeles, CA 90014</h6>
+                      </div>
+                      <div class="contact__phone inline-block float-left-xxs">
+                          <i class="fa fa-phone"></i><a href="tel:">016 2589 2353</a>
+                          <br>
+                          <i class="fa fa-envelope"></i><a href="mailto:">contact@p1.com</a>
+                      </div>
+                      <p>Give us a call or drop by anytime, we endeavour to answer all enquiries within 24 hours on business days.
+                          <br>
+                          <br> We are open from 9am — 5pm week days.
+                      </p>
+                  </div>
+              </div>
+
+              <div class="col-md-6 offset-md-1 col-sm-6 col-xs-12">
+                  <div class="contact_form_page">
+                      <%# <form id="contactform" action="sendmail.php" method="post" class="wpcf7-form"> %>
+                      <%= form_for @contact, url: new_contact_path, :html => {:class => 'wpcf7-form' } do |f| %>
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                              <span class="wpcf7-form-control-wrap name">
+                              <%= f.text_field :name, placeholder: "Name" %>
+                               </span>
+                          </div>
+
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                              <span class="wpcf7-form-control-wrap email">
+                              <%= f.email_field :email, placeholder: "Email" %>
+                              </span>
+                          </div>
+
+                          <div class="col-md-12 col-sm-12 col-xs-12">
+                              <label>Your Message</label>
+                              <div class="wpcf7-form-control-wrap message">
+                              <%= f.text_area :message, placeholder: "Message"%>
+                              </div>
+                              <button class="btn btn__sm transition box-s-none" type="submit" value="Submit">Submit</button>
+                          </div>
+                      <% end %>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- ============ Conatct Page =========== -->
+

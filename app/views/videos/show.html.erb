@@ -1,3 +1,41 @@
 <% provide(:title, @video.title) %>
-<h1>Videos#show</h1>
-<p>Find me in app/views/videos/show.html.erb</p>
+<% breadcrumb @video %>
+<div class="container">
+  <div class="row">
+    <!-- Latest Posts -->
+    <main class="post blog-post col-lg-8"> 
+      <div class="container">
+        <div class="post-single">
+          <div class="post-details">
+            <h1><%= @video.title %></h1>
+            <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
+                <div class="avatar"><img src="<%= asset_path 'avatar-1.jpg' %>" alt="..." class="img-fluid"></div>
+                <div class="title"><span>John Doe</span></div></a>
+              <div class="d-flex align-items-center flex-wrap">       
+                <div class="date"><i class="icon-clock"></i><%= timeago_tag @video.published_at, :nojs => true, :limit => 10.days.ago %></div>
+              </div>
+            </div>
+            <div class="post-body">
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+            <div class='embed-container'><iframe src='https://www.youtube.com/embed/<%= @video.code %>' frameborder='0' allowfullscreen></iframe></div>
+            </div>
+            <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
+              <%= link_to(@video.prev, class: "prev-post text-left d-flex align-items-center") do %>
+                <div class="icon prev"><i class="fa fa-angle-left"></i></div>
+                <div class="text"><strong class="text-primary">Previous Post </strong>
+                  <h6><%= @video.prev.title if @video.prev %></h6>
+                </div>
+              <% end %>
+            <%= link_to(@video.next, class: "next-post text-right d-flex align-items-center justify-content-end") do %>
+                <div class="text"><strong class="text-primary">Next Post </strong>
+                  <h6><%= @video.next.title if @video.next %></h6>            
+                </div>
+                <div class="icon next"><i class="fa fa-angle-right">   </i></div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </main>
+    <%= render partial: "shared/sidebar" %>
+  </div>
+</div>

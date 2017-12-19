@@ -33,11 +33,13 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'meta_request'
+  gem 'letter_opener_web'
 end
 
 
 gem 'figaro'
 gem 'friendly_id'
+gem 'babosa'
 gem 'mini_magick'
 gem 'rails-i18n'
 gem 'administrate', github: 'thoughtbot/administrate'
@@ -52,3 +54,4 @@ gem 'webpacker', github: 'rails/webpacker'
 gem 'kaminari'
 gem 'rails-timeago', '~> 2.0'
 gem 'gretel'
+gem 'mail_form'

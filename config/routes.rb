@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show], concerns: :paginatable
   resources :stories, only: [:index, :show], concerns: :paginatable
   resources :videos, only: [:index, :show], concerns: :paginatable
-  get "contact" => "contact#index"
+  resources 'contact', only: [:new, :create], path_names: { new: '' }
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
   get 'pages/about' => 'high_voltage/pages#show', id: 'about'
 
   devise_for :users

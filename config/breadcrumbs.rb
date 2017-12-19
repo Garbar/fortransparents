@@ -30,5 +30,5 @@ crumb :video do |video|
 end
 
 crumb :contact do
-  link "Our contacts", contact_path
+  link "Our contacts", new_contact_path
 end

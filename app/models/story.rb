@@ -11,6 +11,10 @@ class Story < ApplicationRecord
     new_record? || slug.blank?
   end
 
+  def normalize_friendly_id(text)
+    text.to_slug.transliterate(:russian).normalize.to_s
+  end
+
   def prev
     Story.where("published_at > ?", published_at).order(published_at: :asc).limit(1).first
   end

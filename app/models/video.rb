@@ -9,4 +9,20 @@ class Video < ApplicationRecord
   def should_generate_new_friendly_id?
     new_record? || slug.blank?
   end
+
+  def normalize_friendly_id(text)
+    text.to_slug.transliterate(:russian).normalize.to_s
+  end
+
+  def prev
+    Video.where("published_at > ?", published_at).order(published_at: :asc).limit(1).first
+  end
+
+  def next
+    Video.where("published_at < ?", published_at).order(published_at: :desc).limit(1).first
+  end
+
+  def code
+    self.body.split('/').last if self.body
+  end
 end
