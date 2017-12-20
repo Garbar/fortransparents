@@ -100,5 +100,5 @@ Rails.application.configure do
     :user_name      => ENV['mail_username'],
     :password       => ENV['mail_password'],
     :authentication => :plain,
-  }}
+  }
 end
