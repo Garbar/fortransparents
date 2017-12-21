@@ -13,6 +13,7 @@ class VideoDashboard < Administrate::BaseDashboard
     body: Field::Text,
     description: Field::Text,
     published_at: Field::DateTime,
+    link: Field::String,
     slug: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,8 +27,8 @@ class VideoDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :body,
-    :description,
+    :link,
+    :description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,6 +36,7 @@ class VideoDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
+    :link,
     :body,
     :description,
     :published_at,
@@ -48,10 +50,11 @@ class VideoDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
+    :link,
     :body,
     :description,
     :published_at,
-    :slug,
+    :slug
   ].freeze
 
   # Overwrite this method to customize how videos are displayed
