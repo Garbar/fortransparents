@@ -19,6 +19,9 @@
             <div class="post-body">
             <%= @story.body.html_safe %>
             </div>
+            <div class="post-tags">
+              <%= social_share_button_tag(@story.title, :url => story_url(@story), desc: @story.description) %>
+            </div>
             <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
               <%= link_to(@story.prev, class: "prev-post text-left d-flex align-items-center") do %>
                 <div class="icon prev"><i class="fa fa-angle-left"></i></div>
