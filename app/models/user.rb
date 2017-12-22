@@ -6,4 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   enum role: [:user, :blogger, :admin]
+
+  def can_be_admin?
+    self.admin? || self.blogger?
+  end
 end
