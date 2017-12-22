@@ -19,6 +19,7 @@
             <div class="post-body">
             <%= @article.body.html_safe %>
             </div>
+            <div class="post-tags"><%= social_share_button_tag(@article.title) %></div>
             <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
               <%= link_to(@article.prev, class: "prev-post text-left d-flex align-items-center") do %>
                 <div class="icon prev"><i class="fa fa-angle-left"></i></div>
@@ -32,6 +33,9 @@
                 </div>
                 <div class="icon next"><i class="fa fa-angle-right">   </i></div>
               <% end %>
+            </div>
+            <div class="post-comments">
+              <%= render "shared/disqus", :post => @article %>
             </div>
           </div>
         </div>

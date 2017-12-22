@@ -33,6 +33,9 @@
                 <div class="icon next"><i class="fa fa-angle-right">   </i></div>
               <% end %>
             </div>
+            <div class="post-comments">
+              <%= render "shared/disqus", :post => @story %>
+            </div>
           </div>
         </div>
     </main>
