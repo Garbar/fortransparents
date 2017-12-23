@@ -22,8 +22,11 @@
                 <h3 class="h4"><%= story.title %></h3>
               <% end %>
               <p class="text-muted"><%= story.description %></p>
-              <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
-                <div class="title"><span>John Doe</span></div></a>
+              <footer class="post-footer d-flex align-items-center">
+                <% if  story.author %>
+                  <div class="avatar"><%= image_tag(story.author.avatar_url, class: "img-fluid") %></div>
+                  <div class="title"><span><%= story.author.name %></span></div>
+                <% end %>
                 <div class="date"><i class="icon-clock"></i><%= timeago_tag story.published_at, :nojs => true, :limit => 10.days.ago %></div>             
               </footer>
             </div>

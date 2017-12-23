@@ -15,7 +15,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     name: Field::String,
-    role: Field::String.with_options(searchable: false),
+    role: Field::Select.with_options(collection: User.roles.keys),
     avatar: Field::Carrierwave
   }.freeze
 
@@ -27,6 +27,7 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
+    :role,
     :email
   ].freeze
 

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :articles
     resources :stories
     resources :videos
+    resources :authors
 
     root to: "users#index"
   end

@@ -8,6 +8,7 @@ class VideoDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    author: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
     body: Field::Text,
@@ -27,6 +28,7 @@ class VideoDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
+    :author,
     :link,
     :description
   ].freeze
@@ -36,6 +38,7 @@ class VideoDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
+    :author,
     :link,
     :body,
     :description,
@@ -51,6 +54,7 @@ class VideoDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :link,
+    :author,
     :body,
     :description,
     :published_at,

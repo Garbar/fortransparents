@@ -2,6 +2,7 @@ class Video < ApplicationRecord
   attribute :published_at, :datetime, default: -> { Time.now }
   extend FriendlyId
   friendly_id :title, use: :slugged
+  belongs_to :author
 
   validates :title, presence: true,
                     length: { minimum: 5 }

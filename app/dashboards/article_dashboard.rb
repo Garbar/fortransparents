@@ -8,6 +8,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
+    author: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
     body: Field::Ckeditor,
@@ -27,9 +28,9 @@ class ArticleDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
+    :author,
     :published_at,
-    :slug,
-    :description
+    :slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,6 +38,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
+    :author,
     :body,
     :description,
     :published_at,
@@ -51,6 +53,7 @@ class ArticleDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
+    :author,
     :body,
     :description,
     :published_at,

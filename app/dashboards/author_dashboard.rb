@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class StoryDashboard < Administrate::BaseDashboard
+class AuthorDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -8,16 +8,16 @@ class StoryDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    author: Field::BelongsTo,
     id: Field::Number,
-    title: Field::String,
-    body: Field::Ckeditor,
+    name: Field::String,
     description: Field::Text,
-    published_at: Field::DateTime,
     slug: Field::String,
-    image: Field::Carrierwave,
+    avatar: Field::Carrierwave,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime
+    updated_at: Field::DateTime,
+    articles: Field::HasMany,
+    videos: Field::HasMany,
+    stories: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,45 +27,41 @@ class StoryDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :title,
-    :author,
-    :published_at,
-    :slug,
-    :description
+    :name,
+    :avatar,
+    :slug
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :id,
-    :title,
-    :body,
-    :author,
-    :description,
-    :published_at,
-    :slug,
-    :image,
-    :created_at,
-    :updated_at
-  ].freeze
+  # SHOW_PAGE_ATTRIBUTES = [
+  #   :id,
+  #   :name,
+  #   :description,
+  #   :slug,
+  #   :avatar,
+  #   :created_at,
+  #   :updated_at,
+  # ].freeze
+  SHOW_PAGE_ATTRIBUTES = ATTRIBUTE_TYPES.keys
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :title,
-    :author,
-    :body,
+    :name,
     :description,
-    :published_at,
     :slug,
-    :image
+    :avatar
   ].freeze
 
-  # Overwrite this method to customize how stories are displayed
+  # Overwrite this method to customize how authors are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(story)
-  #   "Story ##{story.id}"
+  # def display_resource(author)
+  #   "Author ##{author.id}"
   # end
+  def display_resource(author)
+    author.name
+  end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171221162001) do
+ActiveRecord::Schema.define(version: 20171222174054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,19 @@ ActiveRecord::Schema.define(version: 20171221162001) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_articles_on_author_id"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
+  end
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "slug"
+    t.string "avatar"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_authors_on_slug", unique: true
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -60,6 +72,8 @@ ActiveRecord::Schema.define(version: 20171221162001) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_stories_on_author_id"
     t.index ["slug"], name: "index_stories_on_slug", unique: true
   end
 
@@ -92,7 +106,12 @@ ActiveRecord::Schema.define(version: 20171221162001) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "link"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_videos_on_author_id"
     t.index ["slug"], name: "index_videos_on_slug", unique: true
   end
 
+  add_foreign_key "articles", "authors"
+  add_foreign_key "stories", "authors"
+  add_foreign_key "videos", "authors"
 end
