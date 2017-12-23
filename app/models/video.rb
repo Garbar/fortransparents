@@ -6,6 +6,7 @@ class Video < ApplicationRecord
 
   validates :title, presence: true,
                     length: { minimum: 5 }
+  validates :author, presence: true
 
   def should_generate_new_friendly_id?
     new_record? || slug.blank?

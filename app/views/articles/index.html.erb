@@ -9,6 +9,11 @@
           <!-- post -->
           <% @articles.each do |article| %>
           <div class="post col-xl-6">
+            <div class="post-thumbnail">
+              <%= link_to(article) do %>
+                <%= image_tag(article.image_url(:blog), class: "img-fluid") if article.image? %>
+              <% end %>
+            </div>
             <div class="post-details">            
               <div class="post-meta d-flex justify-content-between">
                 <div class="date meta-last"><%= article.published_at.strftime('%d %B | %Y') %></div>
