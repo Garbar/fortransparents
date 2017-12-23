@@ -11,7 +11,7 @@ class VideoDashboard < Administrate::BaseDashboard
     author: Field::BelongsTo,
     id: Field::Number,
     title: Field::String,
-    body: Field::Text,
+    body: Field::Ckeditor,
     description: Field::Text,
     published_at: Field::DateTime,
     link: Field::String,
