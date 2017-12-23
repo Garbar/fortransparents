@@ -1,0 +1,4 @@
+<% if  st.author %>
+  <div class="avatar"><%= image_tag(st.author.avatar_url, class: "img-fluid") %></div>
+  <div class="title"><span><%= st.author.name %></span></div>
+<% end %>

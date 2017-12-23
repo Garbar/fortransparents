@@ -1,0 +1,16 @@
+<div class="text col-lg-7">
+  <div class="text-inner d-flex align-items-center">
+    <div class="content">
+      <header class="post-header">
+        <%= link_to(post) do %>
+          <h2 class="h4"><%= post.title %></h3>
+        <% end %>
+      </header>
+      <p><%= post.description %></p>
+      <footer class="post-footer d-flex align-items-center">
+        <%= render "shared/author", :st => post %>
+        <div class="date"><i class="icon-clock"></i> <%= post.published_at.strftime('%d.%m.%Y') %></div>
+      </footer>
+    </div>
+  </div>
+</div>

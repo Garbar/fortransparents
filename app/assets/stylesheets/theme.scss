@@ -798,7 +798,12 @@ section.featured-posts .post-footer {
 section.divider {
   color: #fff;
 }
-
+section.divider h2{
+  padding: 15px;
+}
+section.divider a{
+  padding-bottom: 15px;
+}
 /*
 * ==========================================================
 *     LATEST SECTION
@@ -1049,7 +1054,7 @@ section.gallery .overlay i {
 */
 footer.main-footer {
   background: #0e0e0e;
-  padding: 100px 0 0;
+  padding: 60px 0 0;
   color: #fff;
 }
 

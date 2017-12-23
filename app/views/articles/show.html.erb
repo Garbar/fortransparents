@@ -11,11 +11,10 @@
             <h1><%= @article.title %></h1>
             <% if  @article.author %>
             <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
-                <div class="avatar"><%= image_tag(@article.author.avatar_url, class: "img-fluid") %></div>
-                <div class="title"><span><%= @article.author.name %></span></div>
+              <%= render "shared/author", :st => @article %>
               <div class="d-flex align-items-center flex-wrap">       
-                <div class="date"><i class="icon-clock"></i><%= timeago_tag @article.published_at, :nojs => true, :limit => 10.days.ago %></div>
-              </div>
+              <div class="date"><i class="icon-clock"></i><%= timeago_tag @article.published_at, :nojs => true, :limit => 10.days.ago %></div>
+            </div>
             </div>
             <% end %>
             <div class="post-body">

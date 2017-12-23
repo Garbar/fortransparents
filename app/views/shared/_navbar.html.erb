@@ -19,7 +19,12 @@
     <div class="container">
       <!-- Navbar Brand -->
       <div class="navbar-header d-flex align-items-center justify-content-between">
-        <%= link_to "For parents", root_path, class: "navbar-brand" %>
+            <div class="logo-wrapper">
+              <%= link_to(root_path) do %>
+                <%= image_tag('hand_logo.png', class: "img-fluid", alt: "For parents of transgender people") %>
+              <% end %>
+            </div>
+        <%#= link_to "For parents", root_path, class: "navbar-brand" %>
         <!-- Toggle Button-->
         <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span><span></span><span></span></button>
       </div>
