@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4">
         <div class="logo">
-          <h6 class="text-white">For parents of transgender people</h6>
+          <h6 class="text-white"><%= t('front.title_site') %></h6>
         </div>
         <div class="contact-details">
           <p>53 Broadway, Broklyn, NY 11249</p>
@@ -35,7 +35,7 @@
             <%= link_to(story) do %>
               <div class="item d-flex align-items-center">
                 <div class="image">
-                  <%= image_tag(story.image_url(:preview), class: "img-fluid") if story.image? %>
+                  <%= image_tag(story.image_url, class: "img-fluid") if story.image? %>
                 </div>  
                 <div class="title"><strong><%= story.title %></strong>
                     <span class="date last-meta"><%= story.published_at.strftime('%d %B | %Y') %></span>
@@ -50,7 +50,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <p>&copy; 2017. All rights reserved. For parents of transgender people.</p>
+          <p>&copy; 2017. All rights reserved. <%= t('front.title_site') %>.</p>
         </div>
         <div class="col-md-6 text-right">
         </div>

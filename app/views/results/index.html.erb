@@ -6,7 +6,7 @@
     <main class="posts-listing col-lg-8"> 
       <div class="container">
         <div class="row">
-          <h3>Results of search by query <em><%= params[:query]%></em></h3>        
+          <h3>t('menu.result_search') <em><%= params[:query]%></em></h3>        
          <!-- post -->
           <% @search_results.each do |pg_search_document| %>
           <div class="post col-xl-12">

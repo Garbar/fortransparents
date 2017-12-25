@@ -6,7 +6,7 @@
           <!-- #####Begin iconbox v4-->
           <div class="icon-box ib-v4"><i class="fa fa-transgender-alt fa-4x" aria-hidden="true"></i>
             <h6 class="title with-shaded-label"><span class="shaded-label text-uppercase">Who</span>Who we are?</h6>
-            <p>Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla. Phasellus lectus sem, egestas eget sollicitudin ut.</p>
+            <p><%= t('front.who_we') %></p>
           </div>
           <!-- #####End iconbox v4-->
         </div>
@@ -14,7 +14,7 @@
           <!-- #####Begin iconbox v4-->
           <div class="icon-box ib-v4"><i class="fa fa-newspaper-o fa-4x" aria-hidden="true"></i>
             <h6 class="title with-shaded-label"><span class="shaded-label text-uppercase">What</span>What we do?</h6>
-            <p>Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla. Phasellus lectus sem, egestas eget sollicitudin ut.</p>
+            <p><%= t('front.what_we') %></p>
           </div>
           <!-- #####End iconbox v4-->
         </div>
@@ -22,7 +22,7 @@
           <!-- #####Begin iconbox v4-->
           <div class="icon-box ib-v4"><i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i>
             <h6 class="title with-shaded-label"><span class="shaded-label text-uppercase">How</span>How to contatc?</h6>
-            <p>Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla. Phasellus lectus sem, egestas eget sollicitudin ut.</p>
+            <p><%= t('front.how_to') %></p>
           </div>
           <!-- #####End iconbox v4-->
         </div>
@@ -34,7 +34,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-10">
-          <h1 class="h3">For parents of transgender people</h1>
+          <h1 class="h3"><%= t('front.title_site') %></h1>
           <p class="text-big">
           <strong>Ваш ребенок открылся что является трансгендерным человеком?</strong> 
           Да, это может быть очень сложно понять и принять, но чаще всего непонимание рождается из страха за своего ребенка и недостатка информации.
@@ -70,8 +70,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10">
-          <h2>The video was created by a team of transgender people, as well as their relatives and friends. Its goal is to draw attention to the problems that arise between transgender people and their parents. The problems associated with misunderstanding, fears, lack of reliable information and mutual support.</h2>
-           <%= link_to "View More", videos_path, class: "hero-link" %>
+          <h2><%= t('front.desc_video') %></h2>
+           <%= link_to t('front.view_more'), videos_path, class: "hero-link" %>
         </div>
       </div>
     </div>
@@ -80,8 +80,8 @@
   <section class="latest-posts"> 
     <div class="container">
       <header> 
-        <h2>Latest from the articles</h2>
-        <p class="text-big">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <h2><%= t('front.latest_story') %></h2>
+        <p class="text-big"><%= t('front.desc_story') %></p>
       </header>
       <div class="row">
       <% @last_stories.each do |story| %>
@@ -93,7 +93,7 @@
           </div>
             <div class="post-details">            
               <div class="post-meta d-flex justify-content-between">
-                <div class="date meta-last"><%= story.published_at.strftime('%d %B | %Y') %></div>
+                <div class="date meta-last"><%= l story.published_at, format: :long %></div>
               </div>
               <%= link_to(story) do %>
                 <h3 class="h4"><%= story.title %></h3>

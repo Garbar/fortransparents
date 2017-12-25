@@ -22,8 +22,16 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [350,250]
   end
 
+  version :main_blog do
+    process resize_to_fill: [500,400]
+  end
+
   version :preview do
     process resize_to_fill: [60,60]
+  end
+
+  version :mini do
+    process resize_to_fill: [40,40]
   end
 
   def store_dir

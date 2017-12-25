@@ -3,7 +3,7 @@ crumb :root do
 end
 
 crumb :stories do
-  link "All Live Stories", stories_path
+  link t('menu.story'), stories_path
 end
 
 crumb :story do |story|
@@ -12,7 +12,7 @@ crumb :story do |story|
 end
 
 crumb :articles do
-  link "All Articles", articles_path
+  link t('menu.article'), articles_path
 end
 
 crumb :article do |article|
@@ -21,7 +21,7 @@ crumb :article do |article|
 end
 
 crumb :videos do
-  link "All Videos", videos_path
+  link t('menu.video'), videos_path
 end
 
 crumb :video do |video|
@@ -30,9 +30,9 @@ crumb :video do |video|
 end
 
 crumb :contact do
-  link "Our contacts", new_contact_path
+  link t('menu.contact'), new_contact_path
 end
 
 crumb :results do
-  link "Result of search", results_path
+  link t('menu.result_search'), results_path
 end

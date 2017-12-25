@@ -21,10 +21,22 @@ ru:
   menu:
     home: Главная
     article: Статьи 
-    story: Живые истории 
+    story: Истории из жизни
     video: Видео  
     contact: Наши контакты
-    latest_article: Последние статьи  
+    latest_article: Последние статьи
+    result_search: Результаты поиска по запросу
+  front:
+    title_site: Для родителей трансгендерных людей
+    latest_story: Последние истории от родителей
+    desc_story: ''
+    view_more: СМОТРЕТЬ ДАЛЕЕ
+    desc_video: Ролик создан коллективом трансгендерных людей, а также их родных и близких. Его цель – привлечь внимание к проблемам,
+                возникающим между трансгендерными людьми и их родителями. Проблемами связанными с непониманием,
+                страхами, отсутствием достоверной информации и взаимной поддержки.
+    who_we: Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla. Phasellus lectus sem, egestas eget sollicitudin ut.
+    what_we: Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla. Phasellus lectus sem, egestas eget sollicitudin ut.
+    how_to: Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla. Phasellus lectus sem, egestas eget sollicitudin ut.            
   date:
     abbr_day_names:
     - Вс

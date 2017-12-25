@@ -16,7 +16,7 @@
             </div>
             <div class="post-details">            
               <div class="post-meta d-flex justify-content-between">
-                <div class="date meta-last"><%= article.published_at.strftime('%d %B | %Y') %></div>
+                <div class="date meta-last"><%= l article.published_at, format: :long %></div>
               </div>
               <%= link_to(article) do %>
                 <h3 class="h4"><%= article.title %></h3>
