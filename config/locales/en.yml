@@ -55,6 +55,8 @@ en:
     story: "Stories"    
     video: "Video"    
     contact: "Contacts" 
+    latest_article: Latest articles
+    search: Search
   articles:
     index:
       title: "List of articles"

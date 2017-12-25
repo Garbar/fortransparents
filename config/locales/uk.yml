@@ -23,7 +23,9 @@ uk:
     article: Статті  
     story: Живі історії  
     video: Відео  
-    contact: Наші контакти  
+    contact: Наші контакти
+    latest_article: Останні статті
+    search: Пошук
   date:
     abbr_day_names:
     - нд.

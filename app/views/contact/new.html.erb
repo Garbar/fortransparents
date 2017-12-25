@@ -22,7 +22,6 @@
 
               <div class="col-md-6 offset-md-1 col-sm-6 col-xs-12">
                   <div class="contact_form_page">
-                      <%# <form id="contactform" action="sendmail.php" method="post" class="wpcf7-form"> %>
                       <%= form_for @contact, url: new_contact_path, :html => {:class => 'wpcf7-form' } do |f| %>
                           <div class="col-md-12 col-sm-12 col-xs-12">
                               <span class="wpcf7-form-control-wrap name">
