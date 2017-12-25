@@ -22,9 +22,10 @@
 # art.update(title: 'Для батьків трансгендерних людей', locale: :uk)
 
 art = Article.find_by slug: 'transgendernost-faq-dlya-roditelei-a-takzhe-druzei-blizkih-i-vseh-vseh-vseh'
-art.update(title: 'Transgendered. FAQ for parents.', locale: :en)
-art.update(title: 'Трансгендерність. FAQ для батьків', locale: :uk)
+art.update(title: 'Трансгендерность. FAQ для родителей (а также друзей, близких и всех-всех-всех).', locale: :ru)
+# art.update(title: 'Transgendered. FAQ for parents.', locale: :en)
+# art.update(title: 'Трансгендерність. FAQ для батьків', locale: :uk)
 
-art = Article.find_by slug: 'sovety-psihologa-roditelyam-transgendernyh-ludei'
-art.update(title: 'Psychologist\'s advice to parents of transgender people.', locale: :en)
-art.update(title: 'Поради психолога для батьків трансгендерних людей.', locale: :uk)
+# art = Article.find_by slug: 'sovety-psihologa-roditelyam-transgendernyh-ludei'
+# art.update(title: 'Psychologist\'s advice to parents of transgender people.', locale: :en)
+# art.update(title: 'Поради психолога для батьків трансгендерних людей.', locale: :uk)
