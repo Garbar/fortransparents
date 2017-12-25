@@ -17,3 +17,10 @@
 
 # user = CreateAdminService.new.call
 # puts 'CREATED ADMIN USER: ' << user.email
+art = Article.find_by slug: 'vash-rebenok-otkrylsya-chto-yavlyaetsya-transgendernym-chelovekom'
+art.update(title: 'Для родителей трансгендерных людей', locale: :ru)
+art.update(title: 'Для батьків трансгендерних людей', locale: :uk)
+
+# art = Article.find_by slug: 'transgendernost-faq-dlya-roditelei-a-takzhe-druzei-blizkih-i-vseh-vseh-vseh'
+# art.update(title: 'Для родителей трансгендерных людей', locale: :ru)
+# art.update(title: 'Для батьків трансгендерних людей', locale: :uk)
