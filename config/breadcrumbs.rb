@@ -32,3 +32,7 @@ end
 crumb :contact do
   link "Our contacts", new_contact_path
 end
+
+crumb :results do
+  link "Result of search", results_path
+end

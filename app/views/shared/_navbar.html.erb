@@ -6,12 +6,12 @@
         <div class="close-btn"><i class="icon-close"></i></div>
         <div class="row d-flex justify-content-center">
           <div class="col-md-8">
-            <form action="#">
+            <%= form_tag results_path, method: :get, role: 'search' do %>
               <div class="form-group">
-                <input type="search" name="search" id="search" placeholder="What are you looking for?">
+                <%= text_field_tag :query, params[:query], id: "search" %>
                 <button type="submit" class="submit"><i class="icon-search-1"></i></button>
               </div>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>
@@ -32,19 +32,19 @@
       <div id="navbarcollapse" class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+            <%= link_to t('menu.home'), root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Articles", articles_path, class: "nav-link" %>
+            <%= link_to t('menu.article'), articles_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Live stories", stories_path, class: "nav-link" %>
+            <%= link_to t('menu.story'), stories_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Video", videos_path, class: "nav-link" %>
+            <%= link_to t('menu.video'), videos_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Our Contacts", new_contact_path, class: "nav-link" %>
+            <%= link_to t('menu.contact'), new_contact_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
@@ -54,7 +54,14 @@
           </li>
         </ul>
         <div class="navbar-text"><a href="#" class="search-btn"><i class="icon-search-1"></i></a></div>
-        <ul class="langs navbar-text"><a href="#" class="active">EN</a><span>           </span><a href="#">UA</a></ul>
+        <ul class="langs navbar-text">
+        <%= link_to_unless I18n.locale == :en, "EN", locale: :en %>
+        <%# <a href="#" class="active">EN</a> %>
+        <span>           </span>
+        <%= link_to "UA", locale: :uk %>
+        <span>           </span>
+        <%= link_to "RU", locale: :ru %>
+        </ul>
       </div>
     </div>
   </nav>

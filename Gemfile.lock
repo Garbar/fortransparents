@@ -7,6 +7,15 @@ GIT
       orm_adapter (~> 0.5.0)
 
 GIT
+  remote: https://github.com/globalize/globalize
+  revision: b228455065888d91fd2aca6340dd7ef3d8d5c92e
+  specs:
+    globalize (5.1.0.beta2)
+      activemodel (>= 4.2, < 5.2)
+      activerecord (>= 4.2, < 5.2)
+      request_store (~> 1.0)
+
+GIT
   remote: https://github.com/rails/webpacker.git
   revision: a61f8fe3964e4ed06829118d1f706f12a95008ab
   specs:
@@ -16,8 +25,17 @@ GIT
       railties (>= 4.2)
 
 GIT
+  remote: https://github.com/svenfuchs/rails-i18n.git
+  revision: 7416877aa3132a3f627cc01f872720decf806cc2
+  branch: master
+  specs:
+    rails-i18n (5.0.4)
+      i18n (~> 0.7)
+      railties (~> 5.0)
+
+GIT
   remote: https://github.com/thoughtbot/administrate.git
-  revision: 6661889711edd688c8768e48602fa4a25b82d7bf
+  revision: 64c7eba217c2e368865a81b4eab0813331d6774f
   specs:
     administrate (0.8.1)
       actionpack (>= 4.2, < 5.2)
@@ -86,7 +104,7 @@ GEM
       rails (>= 4.2, < 5.2)
     arel (8.0.0)
     ast (2.3.0)
-    autoprefixer-rails (7.2.2)
+    autoprefixer-rails (7.2.3)
       execjs
     babosa (1.0.2)
     bcrypt (3.1.11)
@@ -213,6 +231,10 @@ GEM
     parser (2.4.0.2)
       ast (~> 2.3)
     pg (0.21.0)
+    pg_search (2.1.1)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      arel (>= 6)
     powerpack (0.1.1)
     public_suffix (3.0.1)
     puma (3.11.0)
@@ -242,9 +264,6 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
-    rails-i18n (5.0.4)
-      i18n (~> 0.7)
-      railties (~> 5.0)
     rails-timeago (2.16.0)
       actionpack (>= 3.1)
       activesupport (>= 3.1)
@@ -290,7 +309,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.9.0)
     ruby_dep (1.5.0)
-    sass (3.5.3)
+    sass (3.5.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -344,6 +363,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel-serializers-xml
   administrate!
   administrate-field-carrierwave (~> 0.2.0)
   administrate-field-ckeditor (~> 0.0.7)
@@ -360,6 +380,7 @@ DEPENDENCIES
   ffaker
   figaro
   friendly_id
+  globalize!
   gretel
   high_voltage (~> 3.0.0)
   jbuilder (~> 2.5)
@@ -370,10 +391,11 @@ DEPENDENCIES
   meta_request
   mini_magick
   pg (~> 0.18)
+  pg_search
   puma (~> 3.7)
   pundit
   rails (~> 5.1.4)
-  rails-i18n
+  rails-i18n!
   rails-timeago (~> 2.0)
   rspec-rails (~> 3.5)
   rubocop

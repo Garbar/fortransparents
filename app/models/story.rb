@@ -1,9 +1,12 @@
 class Story < ApplicationRecord
+  after_save :reindex
   mount_uploader :image, ImageUploader
   attribute :published_at, :datetime, default: -> { Time.now }
   extend FriendlyId
   friendly_id :title, use: :slugged
   belongs_to :author
+  include PgSearch
+  multisearchable :against => [:body, :title]
 
   validates :title, presence: true,
                     length: { minimum: 5 }
@@ -25,5 +28,12 @@ class Story < ApplicationRecord
 
   def next
     Story.where("published_at < ?", published_at).order(published_at: :desc).limit(1).first
+  end
+
+  private
+  ##############################################################################
+
+  def reindex
+    PgSearch::Multisearch.rebuild(Article)
   end
 end

@@ -1,12 +1,17 @@
 class Video < ApplicationRecord
+  after_save :reindex
   attribute :published_at, :datetime, default: -> { Time.now }
   extend FriendlyId
   friendly_id :title, use: :slugged
   belongs_to :author
+  include PgSearch
+  multisearchable :against => [:body, :title]
 
   validates :title, presence: true,
                     length: { minimum: 5 }
   validates :author, presence: true
+
+  translates :title, :body, :description, :fallbacks_for_empty_translations => true
 
   def should_generate_new_friendly_id?
     new_record? || slug.blank?
@@ -26,5 +31,12 @@ class Video < ApplicationRecord
 
   def code
     self.link.split('=').last if self.link
+  end
+
+  private
+  ##############################################################################
+
+  def reindex
+    PgSearch::Multisearch.rebuild(Article)
   end
 end

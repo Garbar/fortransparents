@@ -1,0 +1,21 @@
+ru:
+  activerecord:
+   attributes:
+     article:
+       title: "Название"
+       body: "Текст"
+  forms:
+    messages:
+      success: "Операция была успешно выполнена!"
+    buttons:
+     edit: "Редактировать"
+     submit: "Отправить"
+  menu:
+    new_article: "Добавить статью"
+  articles:
+    index:
+      title: "Список статей"
+    edit:
+      title: "Редактировать статью"
+    new:
+      title: "Добавить статью"

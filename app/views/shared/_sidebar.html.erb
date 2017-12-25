@@ -2,14 +2,14 @@
   <!-- Widget [Search Bar Widget]-->
   <div class="widget search">
     <header>
-      <h3 class="h6">Search the blog</h3>
+      <h3 class="h6">Search</h3>
     </header>
-    <form action="#" class="search-form">
+    <%= form_tag results_path, method: :get, role: 'search', class: "search-form" do %>
       <div class="form-group">
-        <input type="search" placeholder="What are you looking for?">
+        <%= text_field_tag :query, params[:query] %>
         <button type="submit" class="submit"><i class="icon-search"></i></button>
       </div>
-    </form>
+    <% end %>
   </div>
   <!-- Widget [Latest Posts Widget]        -->
   <%= render partial: "shared/latest_posts_block" %>

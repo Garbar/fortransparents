@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171222174054) do
+ActiveRecord::Schema.define(version: 20171225063425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "article_translations", force: :cascade do |t|
+    t.integer "article_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.index ["article_id"], name: "index_article_translations_on_article_id"
+    t.index ["locale"], name: "index_article_translations_on_locale"
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -63,6 +75,15 @@ ActiveRecord::Schema.define(version: 20171222174054) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -95,6 +116,18 @@ ActiveRecord::Schema.define(version: 20171222174054) do
     t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "video_translations", force: :cascade do |t|
+    t.integer "video_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.text "description"
+    t.text "body"
+    t.index ["locale"], name: "index_video_translations_on_locale"
+    t.index ["video_id"], name: "index_video_translations_on_video_id"
   end
 
   create_table "videos", force: :cascade do |t|
