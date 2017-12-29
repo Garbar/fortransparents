@@ -20,7 +20,7 @@ module Relatives
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ru
     config.i18n.fallbacks = true
     config.i18n.available_locales = [:en, :uk, :ru] # your list of available locales here
 
