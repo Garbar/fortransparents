@@ -11,7 +11,7 @@
           <div class="post col-xl-12">
             <div class="post-details">            
               <div class="post-meta d-flex justify-content-between">
-                <div class="date meta-last"><%= video.published_at.strftime('%d %B | %Y') %></div>
+                <div class="date meta-last"><%= l video.published_at, format: :long %></div>
               </div>
               <%= link_to(video) do %>
                 <h3 class="h4"><%= video.title %></h3>

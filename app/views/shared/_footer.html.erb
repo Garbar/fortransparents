@@ -38,7 +38,7 @@
                   <%= image_tag(story.image_url, class: "img-fluid") if story.image? %>
                 </div>  
                 <div class="title"><strong><%= story.title %></strong>
-                    <span class="date last-meta"><%= story.published_at.strftime('%d %B | %Y') %></span>
+                    <span class="date last-meta"><%= l story.published_at, format: :long %></span>
                 </div>
               </div>
             <% end %>
