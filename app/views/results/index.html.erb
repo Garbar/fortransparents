@@ -3,17 +3,17 @@
 <div class="container">
   <div class="row">
     <!-- Latest Posts -->
-    <main class="posts-listing col-lg-8"> 
+    <main class="posts-listing col-lg-8">
       <div class="container">
         <div class="row">
-          <h3>t('menu.result_search') <em><%= params[:query]%></em></h3>        
+          <h3><%= t('menu.result_search') %> <em><%= params[:query]%></em></h3>
          <!-- post -->
           <% @search_results.each do |pg_search_document| %>
           <div class="post col-xl-12">
-            <div class="post-details">            
+            <div class="post-details">
             <%= link_to pg_search_document.searchable.title, pg_search_document.searchable %>
             </div>
-          </div> 
+          </div>
           <hr>
             <% end %>
         </div>

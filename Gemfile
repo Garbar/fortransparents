@@ -34,6 +34,12 @@ group :development do
   gem 'better_errors'
   gem 'meta_request'
   gem 'letter_opener_web'
+
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano3-puma'
+  gem "capistrano-yarn"
 end
 
 
@@ -45,7 +51,6 @@ gem 'rails-i18n', github: 'svenfuchs/rails-i18n', branch: 'master'
 gem 'globalize', git: 'https://github.com/globalize/globalize'
 gem 'activemodel-serializers-xml'
 gem 'administrate', github: 'thoughtbot/administrate'
-# gem 'administrate', github: 'Garbar/administrate'
 gem "administrate-field-ckeditor", "~> 0.0.7"
 gem 'administrate-field-carrierwave', '~> 0.2.0'
 gem 'ckeditor', github: 'galetahub/ckeditor'
