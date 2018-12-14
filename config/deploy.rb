@@ -5,9 +5,9 @@ set :application, "fortransparents"
 set :repo_url, "git@github.com:Garbar/fortransparents.git"
 
 set :nginx_server_name,     'oksanahamster.review'
-set :nginx_use_ssl,      true
-set :nginx_ssl_certificate, '/etc/letsencrypt/live/oksanahamster.review/fullchain.pem'
-set :nginx_ssl_certificate_key,         '/etc/letsencrypt/live/oksanahamster.review/privkey.pem'
+# set :nginx_use_ssl,      true
+# set :nginx_ssl_certificate, '/etc/letsencrypt/live/oksanahamster.review/fullchain.pem'
+# set :nginx_ssl_certificate_key,         '/etc/letsencrypt/live/oksanahamster.review/privkey.pem'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
